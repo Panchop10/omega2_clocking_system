@@ -93,14 +93,15 @@ To use Oled expansion , It should be 1 (ON) :
 ### MYSQL Configuration <a name="subparagraph5"></a>
 
 
+Setup the mysql :
 
-  `HOST = "192.168.1.233"`
+  `HOST = "192.168.1.233"` *-Local host*
   
   `PORT = "3307"`
   
-  `USER = "omega"`
+  `USER = "omega"` 
   
-  `PASSWD = "0m3g4n3d*"`
+  `PASSWD = "0m3g4n3d*"` *-User password*
   
   `DATABASE = "staff"`
 
