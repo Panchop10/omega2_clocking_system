@@ -47,7 +47,7 @@ See https://docs.onion.io/omega2-docs/installing-and-using-python.html
 
 You'll need to connect mysql.
 
-'pip3 install mysql -connector'
+`pip3 install mysql -connector`
 
 
 ## How to use this ? <a name="paragraph2"></a>
@@ -169,7 +169,7 @@ To programmatically access your spreadsheet , You'll need to create a service ac
 
 7. Copy the JSON file to your code directory and rename it to google_spreadsheet/omega_ned_key.json
 
-8.Find the timeclock_system-email inside google_spreadsheet/omega_ned_key.json. Back in your spreadsheet, click the Share button in the top right, and paste the timeclock_system email into the People field to give it edit rights. Hit Send.
+8. Find the timeclock_system-email inside google_spreadsheet/omega_ned_key.json. Back in your spreadsheet, click the Share button in the top right, and paste the timeclock_system email into the People field to give it edit rights. Hit Send.
 
 
 See the [google_spreadsheet](https://github.com/Panchop10/omega2_clocking_system/tree/gspreadsheet/google_spreadsheet)for details 
