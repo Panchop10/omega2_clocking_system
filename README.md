@@ -16,14 +16,17 @@ See   https://docs.onion.io/omega2-docs/
 2. [Requirements](#requirements)
 3. [How to use this ?](#paragraph2)
     1. [Quick Start](#subparagraph1)
-    1. [User Setting](#subparagraph2)
-    1. [Working With RFID & NFC Expansion](#subparagraph3)
+    2. [User Setting](#subparagraph2)
+    3. [MYSQL Configuration](#subparagraph5)
+    4. [Working With RFID & NFC Expansion](#subparagraph3)
        1. [Installation](#subsubparagraph1)
-       1. [Scanning RFID/NFC Tags](#subsubparagraph2)
-       1. [Using Mifare Ultralight Cards](#subsubparagraph3)
-3. [Testing](#testing)
-4. [Built With](#build)
-5. [License](#license)
+       2. [Scanning RFID/NFC Tags](#subsubparagraph2)
+       3. [Using Mifare Ultralight Cards](#subsubparagraph3)
+    5. [Working With Google Spreadsheet and PYTHON](#subparagraph4)  
+       1. [Google Drive API and Service Accounts](#subsubparag1)
+4. [Testing](#testing)
+5. [Built With](#build)
+6. [License](#license)
 
 
 
@@ -41,6 +44,10 @@ the full version of python3:
 `opkg install python3`
 
 See https://docs.onion.io/omega2-docs/installing-and-using-python.html
+
+You'll need to connect mysql.
+
+`pip3 install mysql -connector`
 
 
 ## How to use this ? <a name="paragraph2"></a>
@@ -63,6 +70,10 @@ We’ll need to first install pip on the Omega:
 `opkg install python-pip`
 
 
+`opkg install nfc-exp`
+
+
+
 ### User Setting <a name="subparagraph2"></a>
 
 To stop the system , you'll first need to read the card :
@@ -71,11 +82,30 @@ To stop the system , you'll first need to read the card :
 
 To avoid the duplicate , you'll need to use delay :
 
-`DELAY_SECONDS = 30`*-Delay for clocking again in seconds*
+`DELAY_SECONDS = 30`*- Delay for clocking again in seconds*
 
 To use Oled expansion , It should be 1 (ON) :
 
-`OLED_EXPANSION = 1`*-1 = ON or 0 = OFF*
+`OLED_EXPANSION = 1`*- 1 = ON or 0 = OFF*
+
+
+
+### MYSQL Configuration <a name="subparagraph5"></a>
+
+
+Setup the mysql :
+
+  `HOST = "192.168.1.233"` *-Local host*
+  
+  `PORT = "3307"`
+  
+  `USER = "omega"` 
+  
+  `PASSWD = "0m3g4n3d*"` *-User password*
+  
+  `DATABASE = "staff"`
+
+
 
 
 ### Working With RFID & NFC Expansion <a name="subparagraph3"></a>
@@ -116,6 +146,39 @@ To view the content of the file, use xxd utility by using the following command:
 
 `xxd mycardUltra.mfd`
 
+### Working With Google Spreadsheets and PYTHON <a name="subparagraph4"></a>
+
+Use the spreadsheets to record the check-in , check-out times and total working hours for all employees.
+
+
+
+#### Google Drive API and Service Accounts <a name="subsubparag1"></a>
+
+To programmatically access your spreadsheet , You'll need to create a service account and OAuth2 credentials from the [Google API Console ](https://console.developers.google.com/)
+
+1. Go to the Google APIs Console.
+
+2. Create a new project.
+
+3. Click Enable API. Search for and enable the Google Drive API.
+
+4. Create credentials for a Web Server to access Application Data.
+
+5. Name the service account and grant it a Project Role of Editor.
+
+6. Download the JSON file.
+
+7. Copy the JSON file to your code directory and rename it to google_spreadsheet/omega_ned_key.json
+
+8. Find the timeclock_system-email inside google_spreadsheet/omega_ned_key.json. Back in your spreadsheet, click the Share button in the top right, and paste the timeclock_system email into the People field to give it edit rights. Hit Send.
+
+
+See the [google_spreadsheet](https://github.com/Panchop10/omega2_clocking_system/tree/gspreadsheet/google_spreadsheet)for details 
+
+
+
+See the [Accessing Google Spreadsheet Data using Python](https://towardsdatascience.com/accessing-google-spreadsheet-data-using-python-90a5bc214fd2)
+
 
 
 
@@ -127,7 +190,7 @@ The basic ways to run tests:
 
 2.Configure file `config.py`
 
-3.Run the `database.py` ,set a department and create employees
+3.Run the `menu.py` ,set a department and create employees
 
 4.Run the `main.py`
 
@@ -137,10 +200,11 @@ The basic ways to run tests:
 
 See [Running and Writing Tests](https://devguide.python.org/runtests/) for more on running tests.
 
+
 ## Build With  <a name="build"></a>
 
 - [Atom](https://atom.io) *- Used to edit the code*
-- [DB Browser for SQLite](https://sqlitebrowser.org) *- Used to generate the database*
+- [The MariaDB Foundation](https://mariadb.org) *- Used to generate the database*
 
 
 ## License  <a name="license"></a>
