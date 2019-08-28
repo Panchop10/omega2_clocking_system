@@ -6,7 +6,7 @@ from pathlib import Path
 
 class Config(Enum):
     #CURRENT DIRECTORY
-    PROJECT_DIR = Path().absolute()
+    PROJECT_DIR = str(Path().absolute())
 
     #USER SETTINGS
     DELAY_SECONDS = 10 #DELAY FOR CLOCKING AGAIN IN SECONDS (AVOID DUPLICATE)
