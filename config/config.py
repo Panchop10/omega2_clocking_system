@@ -2,11 +2,11 @@
 
 #Python Modules
 from enum import Enum
-import os
+from pathlib import Path
 
 class Config(Enum):
     #CURRENT DIRECTORY
-    PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+    PROJECT_DIR = Path().absolute()
 
     #USER SETTINGS
     DELAY_SECONDS = 10 #DELAY FOR CLOCKING AGAIN IN SECONDS (AVOID DUPLICATE)
