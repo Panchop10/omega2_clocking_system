@@ -20,8 +20,12 @@ def __main__():
 
     route = Routes()
     while True:
+        print("before card reading")
+
         #Read card, the constructor will search for a card until it gets one
         card = Card()
+
+        print("after card reading")
 
         #If debug options is active, show card id on screen
         if(Config.DEBUG.value):
