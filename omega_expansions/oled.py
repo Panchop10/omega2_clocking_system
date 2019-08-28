@@ -69,3 +69,14 @@ class Oled():
 
             ##Turn off the screen
             oledExp.setDisplayPower(0)
+
+    def debug_msg(self, message):
+        #check if a oled is active
+        if(self.oled_active):
+            #write message and show it for 2 seconds
+            oledExp.write(message)
+            t.sleep(2)
+            oledExp.clear()
+
+            ##Turn off the screen
+            oledExp.setDisplayPower(0)

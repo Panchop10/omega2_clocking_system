@@ -8,6 +8,9 @@ class Config(Enum):
     #CURRENT DIRECTORY
     PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+    # DEBUG
+    DEBUG = 1 #ACTIVATE DEBUG FUNCTIONS ON OLED
+
     #USER SETTINGS
     DELAY_SECONDS = 10 #DELAY FOR CLOCKING AGAIN IN SECONDS (AVOID DUPLICATE)
     OLED_EXPANSION = 1 #1 = ON OR 0 = OFF (USE OLED EXPANSION)
@@ -26,5 +29,5 @@ class Config(Enum):
     DATABASE = "staff"
 
     #GOOGLE SPREADSHEET CONFIGURATION
-    KEY_FILE = PROJECT_DIR+"/../google_spreadsheet/omega_ned_key.json"
+    KEY_FILE = PROJECT_DIR+"/../google_spreadsheet/omega_google_key.json"
     SPREADSHEET_NAME = "timeclock_system"

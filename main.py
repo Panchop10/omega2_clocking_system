@@ -22,6 +22,11 @@ def __main__():
     while True:
         #Read card, the constructor will search for a card until it gets one
         card = Card()
+
+        #If debug options is active, show card id on screen
+        if(Config.DEBUG.value):
+            oled_screen.debug_msg(card.id)
+
         #break the loop if the card presented is the one configured to stop it
         if(card.id == Config.ID_STOP_SYSTEM.value):
            break
