@@ -17,8 +17,9 @@ def __main__():
     #Image to check when main started
     oled_screen = Oled()
     oled_screen.msg_start()
-
+    print("before routes reading")
     route = Routes()
+    print("after routes reading")
     while True:
         print("before card reading")
 
