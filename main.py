@@ -10,6 +10,9 @@ from config.config import Config
 from routes import Routes
 from omega_expansions.oled import Oled
 
+# Python Modules
+from datetime import datetime
+
 #constantly scan for rfid tag presence
 def __main__():
     """Open nfc reader continusly until a card is read"""
@@ -17,8 +20,12 @@ def __main__():
     #Image to check when main started
     oled_screen = Oled()
     oled_screen.msg_start()
-    
+
     route = Routes()
+
+    #System connected to the database and ready to work
+    oled_screen.msg_ok("Ready", datetime.now())
+    
     while True:
         #Read card, the constructor will search for a card until it gets one
         card = Card()
