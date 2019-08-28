@@ -16,6 +16,7 @@ class Config(Enum):
     #DONT CHANGE
     OK_IMG = PROJECT_DIR+"/../img/image_ok.lcd" #Path for OK img
     ERROR_IMG = PROJECT_DIR+"/../img/image_error.lcd" #Path for error img
+    START_IMG = PROJECT_DIR+"/../img/start.lcd" #Path for starting img
 
     #MYSQL CONFIGURATION
     HOST = "192.168.1.233"

@@ -8,13 +8,15 @@ and the data is sent to a google spreadsheet
 from card import Card
 from config.config import Config
 from routes import Routes
+from omega_expansions.oled import Oled
 
 #constantly scan for rfid tag presence
 def __main__():
     """Open nfc reader continusly until a card is read"""
 
-    #Comment to check when main started
-    print("...")
+    #Image to check when main started
+    oled_screen = Oled()
+    oled_screen.msg_start()
 
     route = Routes()
     while True:

@@ -27,6 +27,17 @@ class Oled():
             #Turn on the screen
             oledExp.setDisplayPower(1)
 
+    def msg_start(self):
+        #check if a oled is active
+        if(self.oled_active):
+            #display ok image and show it for 2 seconds
+            oledExp.drawFromFile(Config.START_IMG.value)
+            t.sleep(3)
+            oledExp.clear()
+
+            ##Turn off the screen
+            oledExp.setDisplayPower(0)
+
     def msg_ok(self, name, time):
         #check if a oled is active
         if(self.oled_active):
