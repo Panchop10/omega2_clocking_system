@@ -22,7 +22,5 @@ class Card():
                 .decode('ascii')\
                 .replace('\n', '')
 
-            if uid != '':
-                print(uid)
             #save card uid in id when a card is read
             self.id = uid if uid != '' else 0
